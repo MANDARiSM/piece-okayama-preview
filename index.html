@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
-<title>デザイン確認（C改訂版＝おすすめ）｜相談支援事業所ピース ウェブサイトv2</title>
+<title>デザイン確認（改訂2案を比較）｜相談支援事業所ピース ウェブサイトv2</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Old+Mincho:wght@700;900&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
   header{padding:52px 0 26px;text-align:center}
   .tag{display:inline-block;background:var(--ink);color:#fff;font-size:12px;letter-spacing:.12em;padding:6px 16px;border-radius:999px}
   h1{font-family:var(--disp);font-weight:900;font-size:clamp(25px,5vw,38px);margin:18px 0 10px;letter-spacing:.04em}
-  .sub{color:var(--soft);max-width:52em;margin:auto;font-size:14.5px}
+  .sub{color:var(--soft);max-width:54em;margin:auto;font-size:14.5px}
   .note{max-width:880px;margin:24px auto 0;background:#fff;border:1px solid var(--rule);border-radius:16px;padding:18px 22px;font-size:13.5px;color:var(--soft);box-shadow:var(--shadow);text-align:left}
   .note b{color:var(--ink)}.note .hl{background:#EBF1EC;color:var(--accent);font-weight:700;border-radius:6px;padding:1px 7px}
   .group{margin:40px 0 10px}
@@ -29,21 +29,22 @@
   .gtitle{font-family:var(--disp);font-weight:900;font-size:clamp(18px,3.4vw,24px);letter-spacing:.03em}
   .gdesc{color:var(--soft);font-size:13.5px;margin:2px 0 0}
 
-  /* feature (おすすめ) */
-  .feature{background:var(--card);border:1.5px solid var(--accent);border-radius:24px;overflow:hidden;
-    box-shadow:0 26px 64px -30px rgba(63,125,95,.5);display:grid;grid-template-columns:1fr;margin-top:20px;position:relative}
-  .feature .pick{position:absolute;top:14px;left:14px;z-index:5;background:var(--accent);color:#fff;font-size:12px;font-weight:700;border-radius:999px;padding:6px 14px;box-shadow:0 8px 20px -8px rgba(63,125,95,.8)}
-  .feature .framewin{position:relative;height:360px;overflow:hidden;border-bottom:1px solid var(--rule);background:#fff}
-  .feature .framewin iframe{position:absolute;top:0;left:0;width:1280px;height:1900px;border:0;transform:scale(.5);transform-origin:top left;pointer-events:none}
-  .feature .framewin .veil{position:absolute;inset:0;cursor:pointer;z-index:2}
-  .feature .body{padding:28px 26px;display:flex;flex-direction:column;gap:13px}
-  .feature .cname{font-family:var(--disp);font-weight:900;font-size:24px}
-  .feature .cname small{display:block;font-family:var(--body);font-weight:500;color:var(--soft);font-size:12px;letter-spacing:.08em;margin-top:4px}
-  .feature .desc{font-size:14px;color:var(--soft)}
-  .feature .flowmap{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12.5px;color:var(--ink);background:#F6F8F4;border:1px solid #DFE9E0;border-radius:12px;padding:11px 13px}
-  .feature .flowmap b{font-family:var(--disp);font-weight:900}.feature .flowmap .ar{color:var(--accent);font-weight:700}
-  .feature .open{margin-top:4px;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);color:#fff;font-weight:700;padding:15px 18px;border-radius:11px;font-size:15px;transition:transform .2s}
-  .feature .open:hover{transform:translateY(-2px)}
+  /* 改訂2案 feature grid */
+  .feat2{display:grid;grid-template-columns:1fr;gap:24px;margin-top:20px}
+  .fcard{background:var(--card);border:1.5px solid var(--accent);border-radius:24px;overflow:hidden;
+    box-shadow:0 26px 64px -30px rgba(63,125,95,.5);display:flex;flex-direction:column;position:relative}
+  .fcard .pick{position:absolute;top:13px;left:13px;z-index:5;color:#fff;font-size:11.5px;font-weight:700;border-radius:999px;padding:5px 13px}
+  .fcard .framewin{position:relative;height:330px;overflow:hidden;border-bottom:1px solid var(--rule);background:#fff}
+  .fcard .framewin iframe{position:absolute;top:0;left:0;width:1280px;height:1520px;border:0;transform:scale(.45);transform-origin:top left;pointer-events:none}
+  .fcard .framewin .veil{position:absolute;inset:0;cursor:pointer;z-index:2}
+  .fcard .body{padding:24px 22px;display:flex;flex-direction:column;gap:12px;flex:1}
+  .fcard .cname{font-family:var(--disp);font-weight:900;font-size:21px}
+  .fcard .cname small{display:block;font-family:var(--body);font-weight:500;color:var(--soft);font-size:11.5px;letter-spacing:.08em;margin-top:4px}
+  .fcard .flowmap{display:flex;flex-wrap:wrap;gap:5px;align-items:center;font-size:12px;color:var(--ink);background:#F6F8F4;border:1px solid #DFE9E0;border-radius:11px;padding:10px 12px;line-height:1.5}
+  .fcard .flowmap b{font-family:var(--disp);font-weight:900}.fcard .flowmap .ar{color:var(--accent);font-weight:700}
+  .fcard .desc{font-size:13px;color:var(--soft)}
+  .fcard .open{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);color:#fff;font-weight:700;padding:14px 16px;border-radius:11px;font-size:14.5px;transition:transform .2s}
+  .fcard .open:hover{transform:translateY(-2px)}
 
   .grid{display:grid;grid-template-columns:1fr;gap:24px;padding:22px 0 6px}
   .card{background:var(--card);border:1px solid var(--rule);border-radius:22px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
@@ -70,56 +71,71 @@
   .ref{max-width:1180px;margin:0 auto 60px;font-size:12.5px;color:var(--soft);text-align:center}
   .ref a{color:var(--accent);font-weight:700;border-bottom:1px solid var(--accent);text-decoration:none}
   footer{text-align:center;color:var(--soft);font-size:12px;padding:18px 0 50px}
-  @media(min-width:820px){
-    .feature{grid-template-columns:1.02fr .98fr}
-    .feature .framewin{height:auto;min-height:440px;border-bottom:none;border-right:1px solid var(--rule)}
-  }
+  @media(min-width:820px){.feat2{grid-template-columns:1fr 1fr}}
   @media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr)}}
 </style>
 </head>
 <body>
 <header>
   <div class="wrap">
-    <span class="tag">STEP 1 ／ デザイン方向の確認</span>
-    <h1>ウェブサイトv2 ― おすすめは「C改訂版」</h1>
-    <p class="sub">いただいた当事者目線のご意見（<b>「相談支援って何？」を知らない保護者が、迷わず"理解"できる順番が大事</b>／C＞A＞B）を反映し、
-      <b>Cの分かりやすさ × Aのやさしさ</b>を合体した <b>C改訂版</b> を用意しました。下に従来のA・B・Cも残しています。</p>
+    <span class="tag">STEP 1 ／ デザイン方向の確認（改訂2案の比較）</span>
+    <h1>ウェブサイトv2 ― 読み進む“順番”ちがいの2案</h1>
+    <p class="sub">どちらも <b>「あたたかさ × 分かりやすさ」</b>で、無料・公的サービスである点も明示。
+      ちがいは <b>読み進む“順番（構成）”</b> です。<b>B改訂版＝訪問者の「問い」に順番に答える</b>／<b>C改訂版＝「困りごと」への共感から入る</b>。
+      お好みの“読ませ方”でお選びください。</p>
     <div class="note">
-      <b>反映した核心</b>：読み進む順番を
-      <span class="hl">困りごと → 相談できます → サポート内容 → 利用の流れ</span>
-      に並べ替え、冒頭を「困りごとへの共感」から始めました（"知っている前提"で書かない）。
-      そのうえで、無料・公的サービスである点（費用0円・お金の流れ図・"営業ではありません"）はそのまま明示し、Aの水彩のあたたかみ・やわらかいコピーで温度感を上げています。
-      <br>※ 文章は仮（ダミー）、写真・ロゴは現行サイトの素材を一時流用。配色・フォントは微調整できます。
+      <b>2案の“順番”のちがい</b>：
+      <br>● <b>B改訂版</b>… <span class="hl">お探しのこと → ピースって誰? → 具体的に言うと → どうすれば?</span>（“知りたい”から案内）
+      <br>● <b>C改訂版</b>… <span class="hl">困りごと → 相談できます → サポート内容 → 利用の流れ</span>（“あるある”の共感から）
+      <br>※ 中身（費用0円・お金の流れ図・"営業ではありません"・窓口型導線）は両案とも同じ。文章は仮、写真・ロゴは現行素材の一時流用。配色・フォントは微調整できます。
     </div>
   </div>
 </header>
 
 <div class="wrap">
 
-  <!-- おすすめ C改訂版 -->
+  <!-- 改訂2案 -->
   <div class="group">
     <div class="ghead">
-      <span class="gnum reco">おすすめ</span>
-      <div><span class="gtitle">C改訂版 ― 分かりやすさ × やさしさ</span>
-        <p class="gdesc">当事者レビュー反映。Cの「理解しやすい順番」に、Aの「優しさ・安心感」を合体。迷っている保護者が“結局どうしたらいいか”まで辿り着ける構成。</p></div>
+      <span class="gnum reco">改訂2案</span>
+      <div><span class="gtitle">どちらの“順番”で読ませる？</span>
+        <p class="gdesc">当事者レビュー（C＞A＞B／“知らない人が理解できる順番が大事”）を踏まえた最新2案。読み進む構成だけが異なります。</p></div>
     </div>
-    <div class="feature">
-      <span class="pick">★ 当事者レビュー反映</span>
-      <div class="framewin">
-        <iframe src="direction-c2-clear-warm.html" title="C改訂版" loading="lazy" scrolling="no"></iframe>
-        <a class="veil" href="direction-c2-clear-warm.html" target="_blank" aria-label="C改訂版を開く"></a>
+    <div class="feat2">
+
+      <div class="fcard">
+        <span class="pick" style="background:var(--warm)">B改訂版 ・ 問いに沿って</span>
+        <div class="framewin">
+          <iframe src="direction-b2-guided.html" title="B改訂版" loading="lazy" scrolling="no"></iframe>
+          <a class="veil" href="direction-b2-guided.html" target="_blank" aria-label="B改訂版を開く"></a>
+        </div>
+        <div class="body">
+          <div class="cname">B改訂版：問いに沿って案内<small>GUIDED ・ Q&amp;A ・ WARM</small></div>
+          <div class="flowmap"><b>お探しのこと</b><span class="ar">→</span><b>ピースって誰?</b><span class="ar">→</span><b>具体的に</b><span class="ar">→</span><b>どうすれば?</b></div>
+          <p class="desc">冒頭で「何をお探しですか?」と問い、“探し物セレクタ”で行き先を選べる対話型。続けて「ピースって誰?(＝公的な相談窓口・売り手ではない)」→「具体的に(できること・費用)」→「どうすれば?(流れ)」へ。訪問者の頭の中の問いに、順番どおり答えていく構成。</p>
+          <a class="open" href="direction-b2-guided.html" target="_blank">B改訂版を開いて見る →</a>
+        </div>
       </div>
-      <div class="body">
-        <div class="cname">C改訂版：分かりやすさ × やさしさ<small>CLEAR ・ WARM ・ TRUST</small></div>
-        <div class="flowmap"><b>困りごと</b><span class="ar">→</span><b>相談できます</b><span class="ar">→</span><b>サポート内容</b><span class="ar">→</span><b>利用の流れ</b></div>
-        <p class="desc">冒頭に「こんなこと、ありませんか？」の<b>困りごと共感</b>を置き、続けて<b>「相談支援って何？＝無料・公的」</b>をやさしく説明、<b>できること</b>→<b>利用の流れ</b>へと、知らない人がそのまま読み下せる順番に。Cの端正さ（頼れる相談員）に、Aの水彩・やわらかいコピー（優しさ）を重ねて温度感を底上げ。ページ上部に4ステップの道しるべ付き。</p>
-        <a class="open" href="direction-c2-clear-warm.html" target="_blank">C改訂版を開いて見る →</a>
+
+      <div class="fcard">
+        <span class="pick" style="background:var(--accent)">C改訂版 ・ 困りごと起点</span>
+        <div class="framewin">
+          <iframe src="direction-c2-clear-warm.html" title="C改訂版" loading="lazy" scrolling="no"></iframe>
+          <a class="veil" href="direction-c2-clear-warm.html" target="_blank" aria-label="C改訂版を開く"></a>
+        </div>
+        <div class="body">
+          <div class="cname">C改訂版：分かりやすさ × やさしさ<small>CLEAR ・ WARM ・ TRUST</small></div>
+          <div class="flowmap"><b>困りごと</b><span class="ar">→</span><b>相談できます</b><span class="ar">→</span><b>サポート内容</b><span class="ar">→</span><b>利用の流れ</b></div>
+          <p class="desc">冒頭に「こんなこと、ありませんか?」の“困りごと共感”を置き、続けて「相談支援って何?(＝無料・公的)」をやさしく説明、「できること」→「利用の流れ」へ。Cの端正さ(頼れる相談員)にAの水彩・やわらかコピー(優しさ)を重ねた構成。</p>
+          <a class="open" href="direction-c2-clear-warm.html" target="_blank">C改訂版を開いて見る →</a>
+        </div>
       </div>
+
     </div>
   </div>
 
   <div class="common">
-    <b>無料・公的サービスの伝え方（C改訂版にも継続実装）：</b>
+    <b>無料・公的サービスの伝え方（両案に共通で実装）：</b>
     <span class="chip">費用0円の明示</span>
     <span class="chip">お金の流れ図（公費→事業所→ご家族0円）</span>
     <span class="chip">相談支援(無料) と 使うサービス(1割) の区別</span>
@@ -132,8 +148,8 @@
   <div class="group">
     <div class="ghead">
       <span class="gnum">A – C</span>
-      <div><span class="gtitle">比較元の3案（温度感の振れ幅）</span>
-        <p class="gdesc">C改訂版のベースになった3案。温度感の参考に（暖かい A ⇄ 端正な C、その中間が B）。C改訂版は「C＋A」の合体です。</p></div>
+      <div><span class="gtitle">比較元の3案（温度感の振れ幅・参考）</span>
+        <p class="gdesc">改訂2案のベースになった元案。温度感の参考に（暖かい A ⇄ 端正な C、その中間が B）。</p></div>
     </div>
     <div class="grid">
       <div class="card">
@@ -142,8 +158,7 @@
           <a class="veil" href="direction-a-watercolor.html" target="_blank" aria-label="案Aを開く"></a></div>
         <div class="body">
           <div class="cname">やわらかな水彩<small>WARM（優しい先生）</small></div>
-          <p class="desc">水彩のやさしさ主体。好感度が高く、はじめての保護者の心に寄りそう。温度感は最も高い。</p>
-          <div class="meta"><b>持ち味：</b>優しさ・好感度。C改訂版に“やさしさ”として合流。</div>
+          <p class="desc">水彩のやさしさ主体。好感度が高く、温度感は最も高い。改訂版に“やさしさ”として合流。</p>
           <a class="open" href="direction-a-watercolor.html" target="_blank">案Aを開く →</a>
         </div>
       </div>
@@ -153,8 +168,7 @@
           <a class="veil" href="direction-b-pieces.html" target="_blank" aria-label="案Bを開く"></a></div>
         <div class="body">
           <div class="cname">あたたかな制度案内<small>WARM × REFINED（中間）</small></div>
-          <p class="desc">AとCの中間。やわらかな背景＋明朝見出し。世界観のバランス型。</p>
-          <div class="meta"><b>持ち味：</b>暖かさと端正さの中庸。</div>
+          <p class="desc">AとCの中間。やわらかな背景＋明朝見出し。B改訂版の世界観のベース。</p>
           <a class="open" href="direction-b-pieces.html" target="_blank">案Bを開く →</a>
         </div>
       </div>
@@ -164,8 +178,7 @@
           <a class="veil" href="direction-c-calm.html" target="_blank" aria-label="案Cを開く"></a></div>
         <div class="body">
           <div class="cname">凛とした安心<small>REFINED（頼れる相談員）</small></div>
-          <p class="desc">余白と明朝で落ち着きと信頼感。「結局どうしたらいいの？」に応える分かりやすさ。C改訂版のベース。</p>
-          <div class="meta"><b>持ち味：</b>分かりやすさ・信頼感。連携先にも強い。</div>
+          <p class="desc">余白と明朝で落ち着きと信頼感。C改訂版の構造のベース。</p>
           <a class="open" href="direction-c-calm.html" target="_blank">案Cを開く →</a>
         </div>
       </div>
@@ -175,13 +188,13 @@
   <div class="how">
     <h2>このあとの進め方</h2>
     <ol>
-      <li><b>まず「C改訂版」をスマホでご覧ください。</b>困りごと→相談できます→サポート内容→利用の流れ、の順に読み下せます。下の A・B・C は温度感の比較用です。</li>
-      <li><b>「C改訂版でOK」か、微調整のご希望</b>（例：「もう少し温かく」「困りごとの例を増やす」「写真をこう」など）をお知らせください。</li>
+      <li><b>B改訂版・C改訂版を、スマホで読み比べてください。</b>見た目の方向（あたたかさ×分かりやすさ）は同じで、<b>読み進む“順番”だけ</b>が違います。どちらが「すっと頭に入る」かでお選びください。</li>
+      <li><b>「どちらの順番が良いか」＋微調整のご希望</b>（例：「Bの“お探しのこと”を増やす」「Cの困りごと例を変える」「もう少し温かく」など）をお知らせください。掛け合わせ（例：Bの入口＋Cの共感）も可能です。</li>
       <li>確定を土台に <b>高精細モック（STEP 2）</b> を作成（トップ＋代表ページ4種を、本番と同じ Astro で）。実機確認・微調整のうえサインオフ→全ページ制作へ。</li>
     </ol>
     <div class="chk">いただけると助かるもの:
       <span>本番用ロゴ原本(ai/svg)</span><span>新規撮影写真の可否</span><span>ブランド色の正式指定</span>
-      <span>LINE友だち追加リンク</span><span>困りごと例の追加・修正</span>
+      <span>LINE友だち追加リンク</span><span>“お探しのこと/困りごと”の例の追加・修正</span>
     </div>
   </div>
 
