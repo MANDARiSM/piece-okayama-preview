@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="assets/logo-mark.png">
+<meta name="robots" content="noindex,nofollow">
+<title>デザイン案C改訂｜分かりやすさ × やさしさ ― 相談支援事業所ピース</title>
+<meta name="description" content="岡山市・倉敷市の相談支援｜困りごとから、利用の流れまで、迷わず分かる。ご相談は無料です。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Klee+One:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F4EE; --surface:#FFFFFF; --ink:#283733; --ink-soft:#5C665F; --line-rule:#E5DFD3;
+    --terra:#A65A52; --terra-deep:#8C463F; --gold:#B59A5E; --sage:#6E8B7B; --mist:#DDE6E1;
+    --rose:#B85C5E; --rose-soft:#F3C6C0;
+    --free:#557E66; --free-deep:#3F6350; --free-bg:#EAF1EC; --paid:#9A7B3C;
+    --line:#06C755;
+    --r:14px; --r-lg:22px; --maxw:1080px;
+    --shadow:0 24px 60px -34px rgba(40,55,51,.45);
+    --display:"Shippori Mincho",serif; --body:"Zen Kaku Gothic New",sans-serif; --hand:"Klee One",cursive;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);color:var(--ink);background:var(--bg);line-height:1.95;font-size:16px;
+    letter-spacing:.03em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:22px}
+  .mock-flag{background:var(--ink);color:#fff;text-align:center;font-size:12px;letter-spacing:.08em;padding:7px 14px}
+  .mock-flag b{color:var(--gold)}
+  .blob{position:absolute;border-radius:50%;filter:blur(46px);opacity:.42;z-index:0;pointer-events:none}
+
+  header.site{position:sticky;top:0;z-index:40;background:rgba(247,244,238,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-rule)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+  .brand img{height:38px}
+  .nav-links{display:none;gap:24px;font-size:13.5px;font-weight:500;color:var(--ink-soft);letter-spacing:.04em}
+  .nav-links a:hover{color:var(--terra)}
+  .btn{display:inline-flex;align-items:center;gap:8px;border-radius:8px;font-weight:700;cursor:pointer;border:none;
+    transition:transform .2s,box-shadow .2s;font-size:14px;letter-spacing:.04em}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-line{background:var(--line);color:#fff;padding:11px 20px;box-shadow:0 10px 24px -14px rgba(6,199,85,.9)}
+  .btn-line svg{width:17px;height:17px}
+
+  /* hero — 困りごと起点・温かい */
+  .hero{position:relative;padding:54px 0 58px;overflow:hidden}
+  .hero .b1{width:400px;height:400px;background:radial-gradient(circle at 30% 30%,var(--rose-soft),#E8A87c00);top:-90px;right:-80px}
+  .hero .b2{width:320px;height:320px;background:radial-gradient(circle at 60% 40%,#C7DBCF,#7A958000);bottom:-60px;left:-100px}
+  .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr;gap:34px;align-items:center}
+  .hkicker{font-family:var(--hand);color:var(--terra-deep);font-size:16px;margin-bottom:8px}
+  h1.hero-title{font-family:var(--display);font-weight:800;line-height:1.5;font-size:clamp(30px,6.4vw,50px);letter-spacing:.05em}
+  h1.hero-title .u{background:linear-gradient(transparent 64%,rgba(184,92,94,.18) 64%)}
+  .freeline{display:inline-flex;align-items:center;gap:11px;margin-top:22px;background:var(--free-bg);
+    border:1px solid #CEDED4;border-radius:999px;padding:9px 18px;font-size:14px;color:var(--free-deep);font-weight:700}
+  .freeline .zero{font-family:var(--display);font-weight:800;font-size:19px}
+  .lead{margin-top:20px;font-size:clamp(15px,2.2vw,17px);color:var(--ink-soft);max-width:31em}
+  .lead b{color:var(--ink);font-weight:500}
+  .hero-visual{position:relative;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow);min-height:280px}
+  .hero-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+  /* stepper — このページの道しるべ */
+  .stepper-wrap{position:relative;z-index:2;margin-top:30px}
+  .stepper{display:flex;flex-wrap:wrap;gap:6px 4px;align-items:center;justify-content:center;background:var(--surface);
+    border:1px solid var(--line-rule);border-radius:18px;padding:14px 16px;box-shadow:var(--shadow)}
+  .stepper .s{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-soft);padding:2px 4px}
+  .stepper .s .n{font-family:var(--display);font-weight:700;font-size:11px;color:#fff;background:var(--terra);border-radius:50%;width:20px;height:20px;display:grid;place-items:center}
+  .stepper .s b{font-family:var(--display);color:var(--ink);font-weight:700;letter-spacing:.03em}
+  .stepper .ar{color:var(--sage);font-weight:700}
+
+  .sec-pad{padding-block:60px;position:relative}
+  .sec-head{margin-bottom:36px}
+  .steplabel{display:inline-flex;align-items:center;gap:11px;margin-bottom:8px}
+  .steplabel .no{font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:.16em;color:var(--gold);
+    background:var(--surface);border:1px solid var(--line-rule);border-radius:999px;padding:4px 12px}
+  .steplabel .k{font-family:var(--hand);color:var(--terra-deep);font-size:15px}
+  .sec-title{font-family:var(--display);font-weight:800;font-size:clamp(23px,4.4vw,32px);letter-spacing:.05em}
+  .sec-sub{color:var(--ink-soft);font-size:14px;margin-top:11px;max-width:36em}
+  .center{text-align:center}.center .steplabel{justify-content:center}.center .sec-sub{margin-inline:auto}
+
+  /* STEP 01 困りごと */
+  .troubles{display:grid;grid-template-columns:1fr;gap:12px}
+  .tcard{background:var(--surface);border:1px solid var(--line-rule);border-radius:16px 16px 16px 4px;
+    padding:16px 18px;font-size:14.5px;color:var(--ink);box-shadow:var(--shadow);display:flex;gap:12px;align-items:flex-start}
+  .tcard .qi{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--rose-soft);color:var(--terra-deep);
+    display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:15px}
+  .troubles-foot{margin-top:24px;text-align:center;font-family:var(--display);font-weight:700;font-size:clamp(17px,3.8vw,21px);color:var(--terra-deep);letter-spacing:.04em;line-height:1.7}
+  .troubles-foot small{display:block;font-family:var(--body);font-weight:400;font-size:14px;color:var(--ink-soft);margin-top:8px;letter-spacing:.02em}
+
+  /* STEP 02 相談できます（相談支援とは＋無料） */
+  .define{background:var(--surface);border:1px solid var(--line-rule);border-left:4px solid var(--free);border-radius:var(--r-lg);padding:30px 28px;margin-bottom:26px}
+  .define .big{font-family:var(--display);font-weight:700;font-size:clamp(18px,3.7vw,23px);color:var(--free-deep);line-height:1.7;display:block;margin-bottom:12px;letter-spacing:.03em}
+  .define p{font-size:15px;color:var(--ink-soft)}.define p b{color:var(--ink);font-weight:500}
+  .money{background:var(--surface);border:1px solid var(--line-rule);border-radius:var(--r-lg);padding:30px 28px}
+  .freebar{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;background:var(--free-bg);border:1px solid #D2E0D6;border-radius:var(--r-lg);padding:22px 24px;margin-bottom:24px}
+  .freebar .zero{font-family:var(--display);font-weight:800;font-size:clamp(38px,11vw,60px);color:var(--free-deep);line-height:1}
+  .freebar .zero small{font-size:.34em;margin-left:4px}
+  .freebar .t{font-size:14px;color:var(--ink-soft)}.freebar .t b{color:var(--free-deep);font-weight:700}
+  .mflow{display:grid;grid-template-columns:1fr;gap:0;margin-bottom:24px}
+  .mnode{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;border:1px solid var(--line-rule);border-radius:var(--r);padding:14px 16px}
+  .mnode .mi{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:var(--bg);color:var(--free-deep)}
+  .mnode .mi svg{width:21px;height:21px;stroke-width:1.6}
+  .mnode .ml{font-size:13px;color:var(--ink-soft)}
+  .mnode .ml b{display:block;font-family:var(--display);font-weight:700;font-size:15px;color:var(--ink)}
+  .mnode.you{border-color:#CEDED4;background:var(--free-bg)}.mnode.you .ml b{color:var(--free-deep)}
+  .mnode .tag0{font-family:var(--display);font-weight:800;font-size:21px;color:var(--free-deep)}
+  .marrow{text-align:center;color:var(--sage);padding:5px 0}.marrow svg{width:19px;height:19px}
+  .costs{border-top:1px solid var(--line-rule);padding-top:18px}
+  .cline{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:12px 0;border-bottom:1px solid var(--line-rule)}
+  .cline:last-of-type{border-bottom:none}
+  .cl{font-size:14px;color:var(--ink-soft)}.cl b{color:var(--ink);font-weight:700}
+  .cv{font-family:var(--display);font-weight:700;white-space:nowrap}
+  .cv.free{color:var(--free-deep);font-size:19px}.cv.paid{color:var(--paid);font-size:15px}
+  .cfoot{font-size:12.5px;color:var(--ink-soft);margin-top:14px}
+
+  /* STEP 03 サポート内容 */
+  .canlist{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--line-rule)}
+  .canrow{display:grid;grid-template-columns:auto 1fr;gap:16px;padding:18px 4px;border-bottom:1px solid var(--line-rule);align-items:start}
+  .canrow .ci{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--free-bg);color:var(--free-deep);flex:0 0 auto}
+  .canrow .ci svg{width:22px;height:22px;stroke-width:1.7}
+  .canrow h4{font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:.03em}
+  .canrow p{font-size:13.5px;color:var(--ink-soft);margin-top:3px}
+  .feats{display:grid;grid-template-columns:1fr;gap:14px;margin-top:30px}
+  .feat{background:var(--surface);border:1px solid var(--line-rule);border-radius:var(--r-lg);padding:22px 22px}
+  .feat .fi{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;margin-bottom:13px}
+  .feat .fi svg{width:25px;height:25px;stroke-width:1.7}
+  .fi.r{background:#F3DCD7;color:var(--terra-deep)}.fi.g{background:#DCE8E0;color:var(--free-deep)}.fi.y{background:#EFE7D2;color:#8a7430}
+  .feat h3{font-family:var(--display);font-weight:700;font-size:17px;margin-bottom:7px;letter-spacing:.03em}
+  .feat h3 .ac{color:var(--terra)}
+  .feat p{font-size:13.5px;color:var(--ink-soft)}
+  .ages{border-top:1px solid var(--line-rule);margin-top:30px}
+  .ages-cap{font-family:var(--hand);color:var(--terra-deep);font-size:15px;margin-bottom:6px}
+  .agerow{display:grid;grid-template-columns:120px 1fr;gap:18px;padding:18px 4px;border-bottom:1px solid var(--line-rule);align-items:baseline}
+  .agerow .yr{font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:.04em}
+  .agerow .yr small{display:block;font-family:var(--body);font-size:11.5px;color:var(--ink-soft);font-weight:500;margin-top:2px}
+  .agerow p{font-size:13.5px;color:var(--ink-soft)}
+
+  /* STEP 04 利用の流れ */
+  .flow{display:grid;grid-template-columns:1fr;gap:0}
+  .fstep{display:grid;grid-template-columns:auto 1fr;gap:20px;padding:18px 0;position:relative}
+  .fstep .n{font-family:var(--display);font-weight:700;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--terra);
+    color:var(--terra);display:grid;place-items:center;font-size:17px;background:var(--bg)}
+  .fstep:not(:last-child)::before{content:"";position:absolute;left:22.5px;top:54px;bottom:-8px;width:1.5px;background:var(--line-rule)}
+  .fstep h4{font-weight:700;font-size:15px}
+  .fstep p{font-size:13px;color:var(--ink-soft)}
+
+  /* 実績・ケース */
+  .trust{display:grid;grid-template-columns:1fr;gap:16px;align-items:center;background:linear-gradient(135deg,#EFE7DA,#F7F4EE);
+    border:1px solid var(--line-rule);border-radius:var(--r-lg);padding:28px 28px;text-align:center;margin-bottom:26px}
+  .trust .num{font-family:var(--display);font-weight:800;font-size:clamp(44px,12vw,72px);color:var(--terra);line-height:1}
+  .trust .num small{font-size:.32em;color:var(--ink);margin-left:6px}
+  .trust .cap{font-size:13.5px;color:var(--ink-soft)}
+  .case{display:grid;grid-template-columns:1fr;background:var(--surface);border:1px solid var(--line-rule);border-radius:var(--r-lg);overflow:hidden}
+  .case .ph{min-height:190px;background:linear-gradient(135deg,#DCE6E0,#EEE3D6)}
+  .case .body{padding:28px}
+  .case .tag{display:inline-block;font-size:12px;font-weight:700;color:var(--terra-deep);border:1px solid #E3CFC9;border-radius:999px;padding:4px 13px;margin-bottom:13px}
+  .case h3{font-family:var(--display);font-weight:800;font-size:19px;line-height:1.55;margin-bottom:10px;letter-spacing:.03em}
+  .case p{font-size:14px;color:var(--ink-soft)}
+
+  /* reassure */
+  .reassure{position:relative;text-align:center;background:var(--free-bg);border:1px solid #D6E5DB;border-radius:var(--r-lg);padding:46px 28px;overflow:hidden}
+  .reassure .b{position:absolute;width:200px;height:200px;border-radius:50%;filter:blur(50px);opacity:.4;background:var(--rose-soft);top:-60px;right:-40px}
+  .reassure p{position:relative;font-family:var(--display);font-weight:700;font-size:clamp(19px,4.5vw,25px);color:var(--free-deep);line-height:1.8;letter-spacing:.04em}
+  .reassure .s{position:relative;font-weight:400;font-size:14.5px;color:var(--ink-soft);margin-top:15px;line-height:1.95}
+
+  /* faq */
+  .faq-item{border-bottom:1px solid var(--line-rule);padding:22px 0}
+  .faq-item .q{font-family:var(--display);font-weight:700;font-size:16px;display:flex;gap:14px;letter-spacing:.03em}
+  .faq-item .q .mk{color:var(--terra);font-weight:800}
+  .faq-item .a{font-size:14px;color:var(--ink-soft);margin-top:10px;padding-left:30px}
+
+  /* cta */
+  .cta{position:relative;overflow:hidden;background:linear-gradient(135deg,#6E9F84,#86AE93);color:#fff;border-radius:var(--r-lg);padding:52px 30px;text-align:center}
+  .cta .b{position:absolute;width:280px;height:280px;border-radius:50%;filter:blur(60px);opacity:.3;background:#fff;top:-90px;left:-40px}
+  .cta h2{font-family:var(--display);font-weight:800;font-size:clamp(22px,5vw,31px);letter-spacing:.05em;position:relative}
+  .cta p{margin-top:13px;font-size:14px;opacity:.96;position:relative}
+  .cta .btn-line{margin-top:24px;background:#fff;color:var(--line);font-size:16px;padding:15px 32px;position:relative}
+  .cta .free-note{margin-top:16px;display:inline-block;font-size:13px;background:rgba(255,255,255,.22);border-radius:999px;padding:6px 16px;position:relative}
+  .cta .sub{margin-top:14px;font-size:12.5px;opacity:.94;position:relative}
+  .cta .pub{margin-top:8px;font-size:12px;opacity:.85;position:relative}
+
+  footer.site{background:#1F2B27;color:#A9B4AE;padding-block:48px;margin-top:62px;font-size:13px}
+  footer .partners{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.1)}
+  footer .partners img{height:34px;background:#fff;border-radius:6px;padding:5px 8px}
+  footer .fbrand{font-family:var(--display);font-weight:700;font-size:18px;color:#fff;margin-bottom:10px;letter-spacing:.05em}
+  footer .desig{color:#94A09A;margin-bottom:14px;font-size:12.5px}
+  footer .meta{line-height:2.1;color:#94A09A}footer .meta b{color:#fff;font-weight:500}
+
+  .fixed-line{position:fixed;right:16px;bottom:16px;z-index:50}
+  .fixed-line a{display:flex;align-items:center;gap:9px;background:var(--line);color:#fff;font-weight:700;padding:12px 18px;border-radius:999px;box-shadow:0 16px 34px -14px rgba(6,199,85,.9);font-size:14px}
+  .fixed-line svg{width:19px;height:19px}.fixed-line small{display:block;font-size:10px;font-weight:500;opacity:.92}
+
+  .reveal{opacity:0;transform:translateY(18px);animation:rise .9s forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}
+  @media (prefers-reduced-motion:reduce){.reveal{animation:none;opacity:1;transform:none}}
+
+  @media(min-width:760px){
+    .nav-links{display:flex}
+    .hero-grid{grid-template-columns:1.1fr .9fr}
+    .troubles{grid-template-columns:1fr 1fr}
+    .feats{grid-template-columns:repeat(3,1fr)}
+    .freebar{grid-template-columns:auto 1fr}
+    .flow{grid-template-columns:1fr 1fr;column-gap:40px}
+    .fstep:nth-child(odd):not(:last-child):not(:nth-last-child(2))::before{display:block}
+    .trust{grid-template-columns:auto 1fr;gap:30px;text-align:left}
+    .case{grid-template-columns:1fr 1.1fr}
+    .faq-grid{columns:2;column-gap:40px}.faq-item{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="mock-flag">デザイン案 <b>C改訂</b>｜分かりやすさ × やさしさ ― ※当事者レビュー反映:読み順「困りごと→相談できます→サポート内容→利用の流れ」／文章はダミー・写真は現行サイトより一時流用</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#"><img src="assets/logo-text.png" alt="岡山市認定 相談支援事業所ピース"></a>
+    <nav class="nav-links">
+      <a href="#trouble">困りごと</a><a href="#about">相談できます</a><a href="#support">サポート内容</a>
+      <a href="#flow">利用の流れ</a><a href="#faq">よくある質問</a>
+    </nav>
+    <a class="btn btn-line" href="#cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.64 2 10.13c0 2.52 1.4 4.76 3.6 6.27-.16.6-.6 2.2-.69 2.55-.1.43.16.42.33.31.14-.09 2.2-1.49 3.09-2.1.86.13 1.75.2 2.67.2 5.52 0 10-3.64 10-8.13S17.52 2 12 2z"/></svg>相談する（無料）</a>
+  </div>
+</header>
+
+<section class="hero">
+  <span class="blob b1"></span><span class="blob b2"></span>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="hkicker reveal d1">こんな“気がかり”、ありませんか？</p>
+      <h1 class="hero-title reveal d2">その気がかり、<br><span class="u">ひとり</span>で抱えないで。</h1>
+      <div class="freeline reveal d2"><span class="zero">0円</span>ご相談に、ご家族の費用負担はありません</div>
+      <p class="lead reveal d3">「ことばがゆっくりかも」「園で“気になる”と言われた」――そんな小さな段階から、大丈夫。
+        診断がなくても構いません。<b>どこに相談すればいいか分からない</b>とき、いちばん最初に頼れる場所をめざしています。</p>
+    </div>
+    <figure class="hero-visual reveal d3"><img src="assets/hero-family.jpg" alt="笑顔で公園にいる家族"></figure>
+  </div>
+  <div class="wrap stepper-wrap reveal d3">
+    <div class="stepper">
+      <span class="s"><span class="n">1</span><b>困りごと</b></span><span class="ar">→</span>
+      <span class="s"><span class="n">2</span><b>相談できます</b></span><span class="ar">→</span>
+      <span class="s"><span class="n">3</span><b>サポート内容</b></span><span class="ar">→</span>
+      <span class="s"><span class="n">4</span><b>利用の流れ</b></span>
+    </div>
+  </div>
+</section>
+
+<!-- STEP 01 困りごと -->
+<section class="sec-pad" id="trouble"><div class="wrap">
+  <div class="sec-head center">
+    <span class="steplabel"><span class="no">STEP 01</span><span class="k">困りごと</span></span>
+    <h2 class="sec-title">こんなこと、ありませんか？</h2>
+    <p class="sec-sub">どれも、よくいただくご相談です。あてはまるものが一つでもあれば、それがはじめの一歩になります。</p>
+  </div>
+  <div class="troubles">
+    <div class="tcard reveal d1"><span class="qi">？</span><div>ことばや発達が、まわりよりゆっくりな気がする。</div></div>
+    <div class="tcard reveal d1"><span class="qi">？</span><div>園や学校で「ちょっと気になる」と言われたけれど、どうすれば…。</div></div>
+    <div class="tcard reveal d2"><span class="qi">？</span><div>相談先がいろいろあって、どこに行けばいいのか分からない。</div></div>
+    <div class="tcard reveal d2"><span class="qi">？</span><div>放課後等デイ…名前は聞くけど、うちに合うのか分からない。</div></div>
+    <div class="tcard reveal d3"><span class="qi">？</span><div>診断はないけれど、このまま様子を見ていて大丈夫なのか不安。</div></div>
+    <div class="tcard reveal d3"><span class="qi">？</span><div>進学・就職など、これから先の見通しが持てない。</div></div>
+  </div>
+  <p class="troubles-foot reveal">その“気になる”を、ひとりで抱えなくて大丈夫。
+    <small>まずは、お話を聞かせてください。答えを出す前の「整理」から、ごいっしょします。</small></p>
+</div></section>
+
+<!-- STEP 02 相談できます（相談支援とは＋無料・公的） -->
+<section class="sec-pad" id="about" style="background:var(--surface)"><div class="wrap">
+  <div class="sec-head">
+    <span class="steplabel"><span class="no">STEP 02</span><span class="k">相談できます</span></span>
+    <h2 class="sec-title">「相談支援」って、なに？</h2>
+    <p class="sec-sub">むずかしく聞こえますが、ひとことで言えば “いっしょに考える相談の窓口” です。</p>
+  </div>
+  <div class="define reveal">
+    <span class="big">お子さんに合う支援を、いっしょに考える窓口です。</span>
+    <p>相談支援は、<b>市区町村の制度にもとづく公的なサービス</b>。ご家族の費用負担はありません。
+      私たちは、サービスを売る会社ではありません。「何から始めればいい？」を整理し、必要な支援や手続きにつなぐ役目です。
+      <b>相談だけでも、もちろん大丈夫</b>です。</p>
+  </div>
+  <div class="money reveal">
+    <div class="freebar">
+      <div class="zero">0<small>円</small></div>
+      <p class="t"><b>相談支援（計画づくり・連絡調整・見直し）は全額が公費でまかなわれ、</b>ご家族の自己負担はありません。</p>
+    </div>
+    <div class="mflow">
+      <div class="mnode">
+        <span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6"/></svg></span>
+        <span class="ml"><b>国・県・市町村</b>制度にもとづき費用を負担（公費）</span><span></span>
+      </div>
+      <div class="marrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
+      <div class="mnode">
+        <span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 21h18M6 21V11M10 21V7M14 21v-9M18 21V9"/></svg></span>
+        <span class="ml"><b>相談支援事業所ピース</b>計画づくり・連絡調整・見直しを担当</span><span></span>
+      </div>
+      <div class="marrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
+      <div class="mnode you">
+        <span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5.5 6 5.5c2 0 3 1.2 4 2.5 1-1.3 2-2.5 4-2.5 3.5 0 5 3.5 3.5 6.5C19 16.5 12 21 12 21z"/></svg></span>
+        <span class="ml"><b>ご家族・お子さん</b>相談支援のご利用料</span>
+        <span class="tag0">0円</span>
+      </div>
+    </div>
+    <div class="costs">
+      <div class="cline"><span class="cl"><b>相談支援</b>（計画づくり・連絡調整・見直し）</span><span class="cv free">0円</span></div>
+      <div class="cline"><span class="cl"><b>使うサービス</b>（放課後等デイ等）</span><span class="cv paid">原則1割・上限あり</span></div>
+      <p class="cfoot">※ 使うサービスは世帯の所得に応じた月額上限（0円／4,600円／37,200円）があり、多くは月0〜4,600円程度。相談支援そのものは、いつでも無料です。</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- STEP 03 サポート内容 -->
+<section class="sec-pad" id="support"><div class="wrap">
+  <div class="sec-head">
+    <span class="steplabel"><span class="no">STEP 03</span><span class="k">サポート内容</span></span>
+    <h2 class="sec-title">ピースが、してくれること</h2>
+    <p class="sec-sub">「結局、どうしたらいいの？」に、具体的にお応えします。</p>
+  </div>
+  <div class="canlist reveal">
+    <div class="canrow"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><div><h4>① 相談を聞く</h4><p>困りごとを整理し、これからの見通しを一緒に立てます。</p></div></div>
+    <div class="canrow"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span><div><h4>② 制度を案内する</h4><p>受給者証の申請や、使える支援をわかりやすくご説明します。</p></div></div>
+    <div class="canrow"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><div><h4>③ 計画をつくる</h4><p>お子さんに合った利用計画（サービス等利用計画）を作成します。</p></div></div>
+    <div class="canrow"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></span><div><h4>④ つなぐ・見守る</h4><p>学校や医療と連携し、利用が始まった後も定期的に見直します。</p></div></div>
+  </div>
+
+  <div class="feats">
+    <div class="feat reveal d1"><div class="fi r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5.5 6 5.5c2 0 3 1.2 4 2.5 1-1.3 2-2.5 4-2.5 3.5 0 5 3.5 3.5 6.5C19 16.5 12 21 12 21z"/></svg></div>
+      <h3>0歳から成人まで、<span class="ac">切れ目なく</span></h3><p>「18歳の壁」を越えて、同じ相談員が長く伴走。進学・就労の節目も一緒に。</p></div>
+    <div class="feat reveal d2"><div class="fi g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="19" cy="17" r="2"/></svg></div>
+      <h3>専門性の高い<span class="ac">ケース</span>にも</h3><p>強度行動障害・医療的ケアにも対応できる研修修了者が在籍。まずはお話を。</p></div>
+    <div class="feat reveal d3"><div class="fi y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div>
+      <h3>診断前（<span class="ac">グレーゾーン</span>）でも</h3><p>「気になる」という今の段階から相談できます。困りごとの“今”に寄りそいます。</p></div>
+  </div>
+
+  <div class="ages reveal">
+    <p class="ages-cap">― 年代ごとの見通し（横に広がるサポート）</p>
+    <div class="agerow"><div class="yr">0〜1歳<small>乳児期</small></div><p>はじめての気づきと、健診で言われたことへの不安に寄りそいます。</p></div>
+    <div class="agerow"><div class="yr">1〜6歳<small>就学前</small></div><p>園・療育とのつながりをつくり、就学に向けた準備を一緒に進めます。</p></div>
+    <div class="agerow"><div class="yr">小学生<small>学齢期</small></div><p>支援級・放課後等デイサービスの組み合わせを整理します。</p></div>
+    <div class="agerow"><div class="yr">中学・進路<small>思春期</small></div><p>発達特性に合った進路選択を、本人と一緒に考えます。</p></div>
+    <div class="agerow"><div class="yr">18歳〜<small>成人移行</small></div><p>大人の相談支援へ、切れ目なく支援を引き継ぎます。</p></div>
+  </div>
+</div></section>
+
+<!-- STEP 04 利用の流れ -->
+<section class="sec-pad" id="flow" style="background:var(--surface)"><div class="wrap">
+  <div class="sec-head">
+    <span class="steplabel"><span class="no">STEP 04</span><span class="k">利用の流れ</span></span>
+    <h2 class="sec-title">ご相談から、支援まで</h2>
+    <p class="sec-sub">むずかしい準備は要りません。まずはLINEの一言から。</p>
+  </div>
+  <div class="flow">
+    <div class="fstep reveal d1"><div class="n">1</div><div><h4>まずLINEで相談</h4><p>準備は要りません。困っていることをそのまま。</p></div></div>
+    <div class="fstep reveal d1"><div class="n">2</div><div><h4>くわしくお聞きする</h4><p>お子さんと暮らしの様子をていねいに伺います。</p></div></div>
+    <div class="fstep reveal d2"><div class="n">3</div><div><h4>支援計画をつくる</h4><p>お子さんに合った相談計画をご提案します。</p></div></div>
+    <div class="fstep reveal d2"><div class="n">4</div><div><h4>関係機関と連携</h4><p>学校・園・医療とチームでつながります。</p></div></div>
+    <div class="fstep reveal d3"><div class="n">5</div><div><h4>サービスの決定</h4><p>ご家族の意思を大切に、利用を決めます。</p></div></div>
+    <div class="fstep reveal d3"><div class="n">6</div><div><h4>その後も見直し</h4><p>定期的に振り返り、成長に合わせて調整します。</p></div></div>
+  </div>
+</div></section>
+
+<!-- 実績・ケース -->
+<section class="sec-pad"><div class="wrap">
+  <div class="trust reveal">
+    <div class="num">150<small>件 / 年</small></div>
+    <p class="cap">岡山市・倉敷市から年間およそ150件のご相談をいただいています。市の平均を上回る実績は、地域の信頼の証です。</p>
+  </div>
+  <div class="case reveal">
+    <div class="ph"><img src="assets/consult.jpg" alt="相談支援員と保護者の面談の様子" style="width:100%;height:100%;min-height:190px;object-fit:cover"></div>
+    <div class="body"><span class="tag">2歳・ことばの遅れ</span>
+    <h3>「ことばがゆっくりかも」から始まった、はじめての相談</h3>
+    <p>健診での指摘に不安を抱えていたお母さま。LINEでの一言から療育につながり、いまは園とも連携しながら、少しずつ笑顔が増えています。最初の一歩を、これからも支えます。
+    <br><span style="font-size:12px;color:var(--ink-soft)">※ プライバシーに配慮し、内容は加工しています。</span></p></div>
+  </div>
+</div></section>
+
+<!-- reassure -->
+<section class="sec-pad" style="padding-top:0"><div class="wrap">
+  <div class="reassure reveal"><span class="b"></span>
+    <p>「相談してもいいのかな」と<br>迷っているあなたへ。</p>
+    <p class="s">ここは、評価されたり、何かを売られたりする場所ではありません。<br>相談だけでも、もちろん大丈夫。あなたのペースで、だいじょうぶです。</p>
+  </div>
+</div></section>
+
+<!-- FAQ -->
+<section class="sec-pad" id="faq" style="background:var(--surface)"><div class="wrap">
+  <div class="sec-head center"><span class="steplabel"><span class="k">よくある質問</span></span><h2 class="sec-title">相談の前の、小さな不安に</h2></div>
+  <div class="faq-grid">
+    <div class="faq-item reveal d1"><div class="q"><span class="mk">Q.</span>本当に相談は無料ですか?</div><div class="a">はい。相談支援は公的なサービスで、ご家族の費用負担はありません(全額公費)。安心してご相談ください。</div></div>
+    <div class="faq-item reveal d1"><div class="q"><span class="mk">Q.</span>何かを契約させられたりしませんか?</div><div class="a">いいえ。私たちは“相談の窓口”で、売り込みはありません。利用するかどうかは、いつでもご家族が決められます。</div></div>
+    <div class="faq-item reveal d2"><div class="q"><span class="mk">Q.</span>診断がなくても相談できますか?</div><div class="a">はい。診断の有無にかかわらず、「気になること」だけで大丈夫です。</div></div>
+    <div class="faq-item reveal d2"><div class="q"><span class="mk">Q.</span>秘密は守られますか?</div><div class="a">もちろんです。ご家族の安心を第一に、丁寧に取り扱います。</div></div>
+  </div>
+</div></section>
+
+<!-- CTA -->
+<section class="sec-pad" style="padding-top:0"><div class="wrap" id="cta">
+  <div class="cta reveal"><span class="b"></span>
+    <h2>ひとりで、抱えこまないで。</h2>
+    <p>LINEで「友だち追加」して、メッセージを送るだけ。<br>気が向いたときに、あなたのペースでどうぞ。</p>
+    <a class="btn btn-line" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.64 2 10.13c0 2.52 1.4 4.76 3.6 6.27-.16.6-.6 2.2-.69 2.55-.1.43.16.42.33.31.14-.09 2.2-1.49 3.09-2.1.86.13 1.75.2 2.67.2 5.52 0 10-3.64 10-8.13S17.52 2 12 2z"/></svg>LINEで相談する</a>
+    <div class="free-note">ご相談はすべて無料です</div>
+    <div style="margin-top:18px"><img src="assets/line-qr.png" alt="LINE友だち追加用QRコード" style="width:118px;height:118px;border-radius:14px;background:#fff;padding:8px"><div style="margin-top:8px;font-size:12px;opacity:.92">QRコードからも友だち追加できます</div></div>
+    <p class="sub">お電話でも 080-1937-0107（月〜土 9:30–17:30）</p>
+    <p class="pub">迷うときは、岡山市 障害福祉課（086-803-1235）などの公的窓口もご利用いただけます。</p>
+  </div>
+</div></section>
+
+<footer class="site" id="partners"><div class="wrap">
+  <div class="partners">
+    <img src="assets/badge-okayama.png" alt="岡山市">
+    <img src="assets/badge-enja.png" alt="え〜んじゃネット">
+    <img src="assets/badge-manatee.png" alt="まなてぃ">
+  </div>
+  <div class="fbrand">相談支援事業所ピース</div>
+  <div class="desig">岡山市指定　特定相談支援事業・障害児相談支援事業</div>
+  <div class="meta"><b>合同会社ぴーす</b>(法人番号 6260003004644)<br>
+  〒700-0866 岡山県岡山市北区岡南町2丁目1番5号 3F<br>
+  TEL 080-1937-0107 ／ FAX 086-899-6897<br>
+  営業時間 月〜土 9:30–17:30(日祝・年末年始を除く)／ 対応地域 岡山市・倉敷市</div>
+</div></footer>
+
+<div class="fixed-line"><a href="#cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.64 2 10.13c0 2.52 1.4 4.76 3.6 6.27-.16.6-.6 2.2-.69 2.55-.1.43.16.42.33.31.14-.09 2.2-1.49 3.09-2.1.86.13 1.75.2 2.67.2 5.52 0 10-3.64 10-8.13S17.52 2 12 2z"/></svg><span>相談する<small>ご相談は無料</small></span></a></div>
+</body>
+</html>
