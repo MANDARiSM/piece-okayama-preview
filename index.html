@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
-<title>デザイン方向 比較｜相談支援事業所ピース ウェブサイトv2（モック確認）</title>
+<title>デザイン3案（確定方向）｜相談支援事業所ピース ウェブサイトv2（モック確認）</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Old+Mincho:wght@700;900&display=swap" rel="stylesheet">
@@ -19,18 +19,19 @@
   header{padding:52px 0 26px;text-align:center}
   .tag{display:inline-block;background:var(--ink);color:#fff;font-size:12px;letter-spacing:.12em;padding:6px 16px;border-radius:999px}
   h1{font-family:var(--disp);font-weight:900;font-size:clamp(25px,5vw,38px);margin:18px 0 10px;letter-spacing:.04em}
-  .sub{color:var(--soft);max-width:50em;margin:auto;font-size:14.5px}
-  .note{max-width:840px;margin:24px auto 0;background:#fff;border:1px solid var(--rule);border-radius:16px;padding:18px 22px;font-size:13.5px;color:var(--soft);box-shadow:var(--shadow)}
+  .sub{color:var(--soft);max-width:52em;margin:auto;font-size:14.5px}
+  .note{max-width:860px;margin:24px auto 0;background:#fff;border:1px solid var(--rule);border-radius:16px;padding:18px 22px;font-size:13.5px;color:var(--soft);box-shadow:var(--shadow);text-align:left}
   .note b{color:var(--ink)}
-  .group{margin:46px 0 10px}
+  .note .hl{background:#EBF1EC;color:var(--accent);font-weight:700;border-radius:6px;padding:1px 7px}
+  .group{margin:40px 0 10px}
   .ghead{display:flex;align-items:center;gap:14px;margin-bottom:6px}
-  .gnum{flex:0 0 auto;font-family:var(--disp);font-weight:900;font-size:13px;letter-spacing:.14em;color:#fff;border-radius:999px;padding:6px 14px}
-  .gnum.warm{background:var(--warm)}.gnum.req{background:var(--accent)}
+  .gnum{flex:0 0 auto;font-family:var(--disp);font-weight:900;font-size:13px;letter-spacing:.1em;color:#fff;border-radius:999px;padding:6px 14px;background:var(--accent)}
   .gtitle{font-family:var(--disp);font-weight:900;font-size:clamp(18px,3.4vw,24px);letter-spacing:.03em}
   .gdesc{color:var(--soft);font-size:13.5px;margin:2px 0 0}
-  .reco{display:inline-block;font-size:11.5px;font-weight:700;color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:2px 10px;margin-left:6px;vertical-align:middle}
   .grid{display:grid;grid-template-columns:1fr;gap:24px;padding:22px 0 6px}
-  .card{background:var(--card);border:1px solid var(--rule);border-radius:22px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+  .card{background:var(--card);border:1px solid var(--rule);border-radius:22px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;position:relative}
+  .card.lead{border-color:var(--warm);box-shadow:0 24px 60px -28px rgba(184,92,94,.5)}
+  .pick{position:absolute;top:12px;right:12px;z-index:4;background:var(--warm);color:#fff;font-size:11.5px;font-weight:700;border-radius:999px;padding:5px 12px;box-shadow:0 8px 20px -8px rgba(184,92,94,.8)}
   .framewin{position:relative;height:300px;overflow:hidden;border-bottom:1px solid var(--rule);background:#fff}
   .framewin iframe{position:absolute;top:0;left:0;width:1280px;height:1020px;border:0;transform:scale(.39);transform-origin:top left;pointer-events:none}
   .framewin .veil{position:absolute;inset:0;cursor:pointer;z-index:2}
@@ -46,26 +47,31 @@
   .meta b{color:var(--ink);font-weight:500}
   .open{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--ink);color:#fff;text-decoration:none;font-weight:700;padding:13px 18px;border-radius:10px;font-size:14px;transition:transform .2s}
   .open:hover{transform:translateY(-2px)}
-  .how{background:#fff;border:1px solid var(--rule);border-radius:22px;padding:30px 26px;margin:34px 0 60px;box-shadow:var(--shadow)}
+  .common{max-width:1180px;margin:8px auto 0;background:#fff;border:1px solid var(--rule);border-radius:16px;padding:18px 22px;font-size:13px;color:var(--soft);box-shadow:var(--shadow)}
+  .common b{color:var(--ink)}
+  .common .chip{display:inline-block;background:#EBF1EC;color:var(--accent);border-radius:999px;padding:4px 12px;margin:5px 6px 0 0;font-size:12px;font-weight:700}
+  .how{background:#fff;border:1px solid var(--rule);border-radius:22px;padding:30px 26px;margin:34px 0 16px;box-shadow:var(--shadow)}
   .how h2{font-family:var(--disp);font-weight:900;font-size:22px;margin-bottom:14px;letter-spacing:.04em}
   .how ol{margin:0 0 0 1.2em;font-size:14px;color:var(--soft)}.how ol li{margin-bottom:8px}
   .how .chk{margin-top:18px;font-size:13.5px;color:var(--soft)}
   .how .chk span{display:inline-block;background:#EBF1EC;color:var(--accent);border-radius:999px;padding:4px 12px;margin:4px 6px 0 0;font-size:12px;font-weight:700}
-  footer{text-align:center;color:var(--soft);font-size:12px;padding:24px 0 50px}
+  .ref{max-width:1180px;margin:0 auto 60px;font-size:12.5px;color:var(--soft);text-align:center}
+  .ref a{color:var(--accent);font-weight:700;border-bottom:1px solid var(--accent);text-decoration:none}
+  footer{text-align:center;color:var(--soft);font-size:12px;padding:18px 0 50px}
   @media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr)}}
 </style>
 </head>
 <body>
 <header>
   <div class="wrap">
-    <span class="tag">STEP 1 ／ デザイン方向の確認（モック）</span>
-    <h1>ウェブサイトv2 ― デザイン方向の比較</h1>
-    <p class="sub">A〜F を順にご覧いただけます。<b>A・B・C は「温度感（暖かさ・第一印象）」</b>を探った案、
-      <b>D・E・F は要件に近い「費用負担なし・公的サービス」</b>を前面に出した案です。
-      最終的には、好みの温度感に“無料・公的”の伝え方を<b>組み合わせる</b>こともできます。</p>
+    <span class="tag">STEP 1 ／ デザイン方向の確認（確定方向の3案）</span>
+    <h1>ウェブサイトv2 ― 確定方向の3案</h1>
+    <p class="sub">ヒアリングでいただいた方向（<b>デザインは案A・案Cが中心／伝え方は「費用負担なし・公的サービス（営業ではない）」</b>）を反映し、
+      <b>3案すべてに“無料・公的”の伝え方を統合</b>しました。3案は<b>温度感（暖かさ⇄端正さ）のちがい</b>でお選びいただけます。</p>
     <div class="note">
-      <b>大切な前提</b>：相談支援（計画づくり・連絡調整・見直し）は<b>ご家族の費用負担0円・全額公費</b>の公的サービスです。
-      D/E/F はこの点を明確にし、申込ボタン中心の“ファネル感”を抑えています（＝要件に近い）。A/B/C は雰囲気づくりの参考に。
+      <b>大切な前提（3案すべてに反映済み）</b>：相談支援（計画づくり・連絡調整・見直し）は
+      <span class="hl">ご家族の費用負担0円・全額公費</span>の公的サービスです。
+      各案に「<b>費用0円の明示</b>」「<b>お金の流れ図</b>（公費→事業所→ご家族0円）」「<b>相談支援(無料)と使うサービス(1割)の区別</b>」「<b>“営業ではありません”の安心メッセージ</b>」「<b>窓口型の導線</b>」を入れています。
       <br>※ 文章は仮（ダミー）、写真・ロゴは現行サイトの素材を一時流用。配色・フォントは微調整できます。
     </div>
   </div>
@@ -73,39 +79,39 @@
 
 <div class="wrap">
 
-  <!-- 温度感 A/B/C（先に表示） -->
   <div class="group">
     <div class="ghead">
-      <span class="gnum warm">A – C</span>
-      <div><span class="gtitle">温度感・印象の方向</span>
-        <p class="gdesc">暖かさ・第一印象を探った3案。雰囲気の好みを選ぶ参考に（“無料・公的”の伝え方はD/E/Fの要素を後から合流できます）。</p></div>
+      <span class="gnum">A – C</span>
+      <div><span class="gtitle">確定方向の3案（A優勢 ＋ 無料・公的の伝え方）</span>
+        <p class="gdesc">中身（無料・公的サービスの伝え方）は3案ほぼ共通。ちがいは“温度感”です。案A＝最も暖かい（やや優勢）／案C＝最も端正（連携先に強い）／案B＝その中間。</p></div>
     </div>
     <div class="grid">
 
-      <div class="card">
+      <div class="card lead">
+        <span class="pick">おすすめ・やや優勢</span>
         <div class="framewin"><span class="ring" style="background:#B85C5E">A</span>
           <iframe src="direction-a-watercolor.html" title="案A" loading="lazy" scrolling="no"></iframe>
           <a class="veil" href="direction-a-watercolor.html" target="_blank" aria-label="案Aを開く"></a></div>
         <div class="body">
-          <div class="cname">やわらかな水彩<small>EDITORIAL ・ WARM</small></div>
-          <p class="desc">ロゴの水彩感を活かした、手紙のようにやさしい世界観。明朝の見出しで、ぬくもりと品を両立。いちばん「情緒・共感」に寄った案。</p>
-          <div class="row"><span class="lab">配色</span><span class="sw" style="background:#FBF8F2"></span><span class="sw" style="background:#B85C5E"></span><span class="sw" style="background:#7FA8CE"></span><span class="sw" style="background:#8FAE8B"></span><span>クリーム＋ローズ＋水彩</span></div>
-          <div class="row"><span class="lab">書体</span><span>見出し:Zen Old Mincho／本文:Zen Kaku Gothic New</span></div>
-          <div class="meta"><b>持ち味：</b>情緒的な安心感。はじめての保護者の心に寄りそう。</div>
+          <div class="cname">やわらかな水彩 × 公的な安心<small>WARM ・ EDITORIAL</small></div>
+          <p class="desc">ロゴの水彩感を活かした、手紙のようにやさしい世界観。そのうえで「相談は無料・公的サービス／何かを売る場ではない」を全面に。費用0円バー・お金の流れ図・“営業ではありません”を、暖かいトーンで自然に伝える、最も親しみやすい案。</p>
+          <div class="row"><span class="lab">配色</span><span class="sw" style="background:#FBF8F2"></span><span class="sw" style="background:#B85C5E"></span><span class="sw" style="background:#5E8A6F"></span><span class="sw" style="background:#7FA8CE"></span><span>クリーム＋ローズ＋無料グリーン</span></div>
+          <div class="row"><span class="lab">書体</span><span>見出し:Zen Old Mincho／本文:Zen Kaku Gothic</span></div>
+          <div class="meta"><b>持ち味：</b>情緒的な安心感が最大。はじめての保護者の心に寄りそいつつ、無料・公的が伝わる。</div>
           <a class="open" href="direction-a-watercolor.html" target="_blank">案Aを開いて見る →</a>
         </div>
       </div>
 
       <div class="card">
-        <div class="framewin"><span class="ring" style="background:#F47B6A">B</span>
+        <div class="framewin"><span class="ring" style="background:#B06A5C">B</span>
           <iframe src="direction-b-pieces.html" title="案B" loading="lazy" scrolling="no"></iframe>
           <a class="veil" href="direction-b-pieces.html" target="_blank" aria-label="案Bを開く"></a></div>
         <div class="body">
-          <div class="cname">つながるピース<small>FRIENDLY ・ MODERN</small></div>
-          <p class="desc">「PIECE＋together」を、丸みのある書体とカラフルなピースで表現。明るく親しみやすい。いちばん「やさしさ・親近感」に寄った案。</p>
-          <div class="row"><span class="lab">配色</span><span class="sw" style="background:#FFFDF8"></span><span class="sw" style="background:#F47B6A"></span><span class="sw" style="background:#54B4E0"></span><span class="sw" style="background:#F6C453"></span><span>白＋マルチパステル</span></div>
-          <div class="row"><span class="lab">書体</span><span>丸ゴシック（Zen Maru Gothic）</span></div>
-          <div class="meta"><b>持ち味：</b>心理的ハードルを最も下げる明るさ。</div>
+          <div class="cname">あたたかな制度案内<small>WARM × REFINED（中間）</small></div>
+          <p class="desc">案Aの“水彩のやさしさ”と案Cの“明朝の品格”をかけ合わせた中間案。やわらかな背景に、端正な明朝見出し。温度感と信頼感のバランス型で、保護者にも連携先にも届きやすい中庸の佇まい。</p>
+          <div class="row"><span class="lab">配色</span><span class="sw" style="background:#F8F5EE"></span><span class="sw" style="background:#B06A5C"></span><span class="sw" style="background:#5A8369"></span><span class="sw" style="background:#B59A5E"></span><span>生成り＋テラコッタ＋無料グリーン</span></div>
+          <div class="row"><span class="lab">書体</span><span>見出し:Shippori Mincho／本文:Zen Kaku Gothic</span></div>
+          <div class="meta"><b>持ち味：</b>暖かさと端正さのバランス。迷ったときの“まん中”の選択肢。</div>
           <a class="open" href="direction-b-pieces.html" target="_blank">案Bを開いて見る →</a>
         </div>
       </div>
@@ -115,10 +121,10 @@
           <iframe src="direction-c-calm.html" title="案C" loading="lazy" scrolling="no"></iframe>
           <a class="veil" href="direction-c-calm.html" target="_blank" aria-label="案Cを開く"></a></div>
         <div class="body">
-          <div class="cname">凛とした安心<small>REFINED ・ TRUST</small></div>
-          <p class="desc">余白と明朝で、落ち着きと信頼感を前面に。保護者へのやさしさを保ちつつ、学校・医療・行政からの信用も得やすい案。</p>
-          <div class="row"><span class="lab">配色</span><span class="sw" style="background:#F6F5F1"></span><span class="sw" style="background:#283733"></span><span class="sw" style="background:#A65A52"></span><span class="sw" style="background:#B59A5E"></span><span>グレージュ＋深緑＋テラコッタ</span></div>
-          <div class="row"><span class="lab">書体</span><span>明朝（Shippori Mincho）</span></div>
+          <div class="cname">凛とした安心 × 公的サービス<small>REFINED ・ TRUST</small></div>
+          <p class="desc">余白と明朝で、落ち着きと信頼感を前面に。同じ「無料・公的・営業ではない」メッセージを、端正なトーンで。保護者へのやさしさを保ちつつ、学校・医療・行政からの信用も得やすい案。</p>
+          <div class="row"><span class="lab">配色</span><span class="sw" style="background:#F6F5F1"></span><span class="sw" style="background:#283733"></span><span class="sw" style="background:#A65A52"></span><span class="sw" style="background:#557E66"></span><span>グレージュ＋深緑＋テラコッタ</span></div>
+          <div class="row"><span class="lab">書体</span><span>見出し:Shippori Mincho／本文:Zen Kaku Gothic</span></div>
           <div class="meta"><b>持ち味：</b>連携先（行政・学校・医療）の信頼を得やすい落ち着き。</div>
           <a class="open" href="direction-c-calm.html" target="_blank">案Cを開いて見る →</a>
         </div>
@@ -127,72 +133,35 @@
     </div>
   </div>
 
-  <!-- 要件に近い D/E/F -->
-  <div class="group">
-    <div class="ghead">
-      <span class="gnum req">D – F</span>
-      <div><span class="gtitle">費用負担なし・公的サービスが伝わる方向<span class="reco">要件に近い</span></span>
-        <p class="gdesc">共通：相談支援は無料（全額公費）を明示／「相談支援（無料）」と「使うサービス（1割）」を区別／公的な位置づけ／窓口型の導線（売り込み感を排除）。</p></div>
-    </div>
-    <div class="grid">
-
-      <div class="card">
-        <div class="framewin"><span class="ring" style="background:#3E78A6">D</span>
-          <iframe src="direction-d-public.html" title="案D" loading="lazy" scrolling="no"></iframe>
-          <a class="veil" href="direction-d-public.html" target="_blank" aria-label="案Dを開く"></a></div>
-        <div class="body">
-          <div class="cname">公的窓口・安心の制度案内<small>PUBLIC ・ INFORMATION</small></div>
-          <p class="desc">「費用0円」の告知バーと“お金の仕組み図”を前面に。自治体の案内のような、信頼できる公共インフォメーション調。「行政サービスらしさ・安心」に寄った案。</p>
-          <div class="row"><span class="lab">配色</span><span class="sw" style="background:#F4F8FA"></span><span class="sw" style="background:#3E78A6"></span><span class="sw" style="background:#2C8A6B"></span><span class="sw" style="background:#4E9B8F"></span><span>ブルー＋無料グリーン</span></div>
-          <div class="row"><span class="lab">書体</span><span>丸ゴシック＋ゴシック</span></div>
-          <div class="meta"><b>持ち味：</b>「無料・公費」がひと目で伝わる。費用の誤解を最初に解消。</div>
-          <a class="open" href="direction-d-public.html" target="_blank">案Dを開いて見る →</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="framewin"><span class="ring" style="background:#3D5A80">E</span>
-          <iframe src="direction-e-guide.html" title="案E" loading="lazy" scrolling="no"></iframe>
-          <a class="veil" href="direction-e-guide.html" target="_blank" aria-label="案Eを開く"></a></div>
-        <div class="body">
-          <div class="cname">制度ガイド・伴走ナビ<small>GUIDE ・ HANDBOOK</small></div>
-          <p class="desc">自社サービスの宣伝ではなく“制度の道案内”。章立て・利用までの道のり・むずかしい言葉のやさしい言い換え。紙の手引きのような編集調。「中立・教育的」な案。</p>
-          <div class="row"><span class="lab">配色</span><span class="sw" style="background:#FAF7F0"></span><span class="sw" style="background:#3D5A80"></span><span class="sw" style="background:#C98A3C"></span><span class="sw" style="background:#3F7D5F"></span><span>紺＋砂＋金</span></div>
-          <div class="row"><span class="lab">書体</span><span>明朝（Shippori Mincho）＋ゴシック</span></div>
-          <div class="meta"><b>持ち味：</b>「何者か（売り手でなく案内役）」が伝わる。制度理解を助ける。</div>
-          <a class="open" href="direction-e-guide.html" target="_blank">案Eを開いて見る →</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="framewin"><span class="ring" style="background:#5E8A6F">F</span>
-          <iframe src="direction-f-quiet.html" title="案F" loading="lazy" scrolling="no"></iframe>
-          <a class="veil" href="direction-f-quiet.html" target="_blank" aria-label="案Fを開く"></a></div>
-        <div class="body">
-          <div class="cname">やさしいお知らせ・公共的ミニマル<small>QUIET ・ MINIMAL</small></div>
-          <p class="desc">売り込みを徹底排除した、静かな“公的なお知らせ”。大きな余白と最小限の装飾、固定ボタンなし。「営業ではありません」を体現。「非営利・誠実」に振った案。</p>
-          <div class="row"><span class="lab">配色</span><span class="sw" style="background:#FCFBF7"></span><span class="sw" style="background:#2B2B27"></span><span class="sw" style="background:#5E8A6F"></span><span>生成り＋墨＋緑</span></div>
-          <div class="row"><span class="lab">書体</span><span>明朝見出し＋細めゴシック</span></div>
-          <div class="meta"><b>持ち味：</b>“売り込まれない”安心感が最大。心理的ハードルが最も低い。</div>
-          <a class="open" href="direction-f-quiet.html" target="_blank">案Fを開いて見る →</a>
-        </div>
-      </div>
-
-    </div>
+  <div class="common">
+    <b>3案に共通して入れた“無料・公的サービス”の伝え方：</b>
+    <span class="chip">費用0円の明示（ヒーロー＆費用セクション）</span>
+    <span class="chip">お金の流れ図（公費→事業所→ご家族0円）</span>
+    <span class="chip">相談支援(無料) と 使うサービス(1割) の区別</span>
+    <span class="chip">「営業ではありません」の安心メッセージ</span>
+    <span class="chip">窓口型の導線（売り込み感を排除）</span>
+    <span class="chip">公的窓口（市の障害福祉課）も案内</span>
   </div>
 
   <div class="how">
     <h2>このあとの進め方</h2>
     <ol>
-      <li><b>A〜F をスマホでご覧ください。</b>まず A・B・C で“温度感（暖かさ）”の好みを、つづいて D・E・F で“費用負担なし・公的サービス”の伝わり方をご確認ください。</li>
-      <li><b>「好きな温度感（A/B/C）」と「伝え方（D/E/F）」を、それぞれお選び</b>いただくか、組み合わせのご希望（例：<b>Bの親しみ × Dの費用説明</b>、<b>Cの落ち着き × Fの非売り込み</b>）をお知らせください。</li>
-      <li>選定／組み合わせを土台に <b>高精細モック（STEP 2）</b> を作成（トップ＋代表ページ4種を本番と同じAstroで）。実機確認・微調整のうえサインオフ→全ページ制作へ。</li>
+      <li><b>A・B・C をスマホでご覧ください。</b>中身（無料・公的の伝え方）はほぼ共通です。<b>“温度感”の好み</b>でお選びください（暖かい A ⇄ 端正な C、その中間が B）。</li>
+      <li><b>1案をお選び</b>いただくか、微調整のご希望（例：「Aをベースに、もう少し明朝寄りに」「費用の図はもっと大きく」など）をお知らせください。</li>
+      <li>選定を土台に <b>高精細モック（STEP 2）</b> を作成（トップ＋代表ページ4種を、本番と同じ Astro で）。実機確認・微調整のうえサインオフ→全ページ制作へ。</li>
     </ol>
     <div class="chk">いただけると助かるもの:
       <span>本番用ロゴ原本(ai/svg)</span><span>新規撮影写真の可否</span><span>ブランド色の正式指定</span>
       <span>LINE友だち追加リンク</span><span>「無料/公費」表現でNGがあれば</span>
     </div>
   </div>
+
+  <p class="ref">※ 伝え方の検討に使った参考案（公的サービスの見せ方バリエーション）も残しています：
+    <a href="direction-d-public.html" target="_blank">参考D 公的窓口</a> ／
+    <a href="direction-e-guide.html" target="_blank">参考E 制度ガイド</a> ／
+    <a href="direction-f-quiet.html" target="_blank">参考F 公共的ミニマル</a>
+    （これらの“伝え方”は上の3案に取り込み済みです）</p>
+
 </div>
 
 <footer>相談支援事業所ピース ／ 合同会社ぴーす ｜ ウェブサイトv2 デザイン方向確認用モック（社外秘）</footer>
